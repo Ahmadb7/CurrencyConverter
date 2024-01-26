@@ -56,6 +56,7 @@
     <Compile Include="CurrencyCode.cs" />
     <Compile Include="CustomCurrency.cs" />
     <Compile Include="CustomCurrencyConverter.cs" />
+    <Compile Include="Exceptions\NoConfigurationDataException.cs" />
     <Compile Include="ICurrencyConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

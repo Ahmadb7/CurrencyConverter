@@ -6,6 +6,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using TechTest.ConsoleApp.Exceptions;
 
 namespace TechTest.ConsoleApp
 {
@@ -106,6 +107,12 @@ namespace TechTest.ConsoleApp
         private bool FindRount(string from, string to, out double rate)
         {
             rate = 0;
+
+            if(adjacencyGraph == null || adjacencyGraph.EdgeCount == 0 || adjacencyGraph.VertexCount == 0)
+            {
+                throw new NoConfigurationDataException("No configuration data is imported.");
+            }
+
             // Compute shortest paths
             TryFunc<string, IEnumerable<Edge<string>>> tryGetPaths = adjacencyGraph.ShortestPathsDijkstra(edgeCost, from);
 
